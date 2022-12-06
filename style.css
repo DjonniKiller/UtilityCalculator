@@ -1,0 +1,27 @@
+table{
+    width: 1000px;
+    border: 2px double;
+    border-width: 5px;
+}
+
+td{
+    text-align: center;
+    vertical-align: middle;
+    width: 250px;
+    border: 1px solid;
+}
+
+input{
+    margin: 5px;
+    text-align: right;
+}
+
+button{
+    width: 50%;
+    height: 50px;
+}
+
+.result{
+    height: 100px;
+    width: 50%;
+}

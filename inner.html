@@ -11,10 +11,51 @@
 </head>
 
 <body>
-	<div>
-		<label>Прошлое значение счетчика</label>
-		<input>
-	</div>
+	<table>
+		<tr>
+			<td colspan="4">
+				<h2>Тарифы</h2>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Свет<input id="Light" value="3"></label>
+			</td>
+			<td>
+				<label>Свет (Свыше 250 кВатт)<input id="LightLarge" value="3"></label>
+			</td>
+			<td>	
+				<label>Газ<input id="Gas"></label>
+			</td>
+			<td>
+				<label>Вода<input id="Water"></label>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<h3>Прошлые значения счетчика</h3>
+				<div>
+					<p><label>Свет<input id="PMV_Light"> кВатт</label></p>
+					<p><label>Газ<input id="PMV_Gas"> м³</label></p>
+					<p><label>Вода<input id="PMV_Water"> м³</label></p>
+				</div>
+			</td>
+			<td colspan="2">
+				<h3>Текущие значения счетчика</h3>
+				<div>
+					<p><label>Свет<input id="CMV_Light"> кВатт</label></p>
+					<p><label>Газ<input id="CMV_Gas"> м³</label></p>
+					<p><label>Вода<input id="CMV_Water"> м³</label></p>
+				</div>
+			</td>
+		</tr>
+		<tr style="height: 200px;">
+			<td colspan="4">
+				<p><input id="Result" class="result"></p>
+				<p><button onclick="DoSomeFuckingMagic();">Рассчитать</button></p>
+			</td>
+		</tr>
+	</table>	
 </body>
 
 </html>
