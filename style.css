@@ -1,14 +1,78 @@
-table{
+button{
+    width: 25%;
+    height: 50px;
+}
+
+.result-input{
+    width: 50%;
+    height: 100px;
+    margin: 5px 0 5px 0;
+}
+
+.flex-container{
+    display: flex;
+    max-width: 80%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    margin: 0 10% 0 10%;
+}
+
+.header{
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.tarrif-header{
+    font-size: medium;
+    font-weight: bold;
+}
+
+.tariff-div{
+    width: 25%;
+}
+
+.flex-row{
+    display: flex;
+    margin: 15px 0 15px 0;
+}
+
+.tariff-input{
+    width: 80%;
+    margin: 0 25px 0 25px;
+}
+
+.meter-params-head{
+    width: 50%;
+    font-weight: bold;
+}
+
+.meter-params{
+    width: 50%;
+}
+
+
+
+
+
+
+/* table{
     width: 1000px;
     border: 2px double;
     border-width: 5px;
+    border-collapse: collapse;
+}
+
+.RowCutter{
+    border-bottom: 3px dotted;
+    margin-bottom: 5px;
 }
 
 td{
     text-align: center;
     vertical-align: middle;
     width: 250px;
-    border: 1px solid;
 }
 
 input{
@@ -25,3 +89,11 @@ button{
     height: 100px;
     width: 50%;
 }
+
+.textCell{
+    width: 50px;
+}
+
+.inputCell{
+    width: 200px;
+} */

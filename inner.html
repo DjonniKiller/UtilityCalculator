@@ -11,13 +11,55 @@
 </head>
 
 <body>
-	<table>
+	<div class="flex-container">
+		<div class="header">Калькулятор ЖКХ</div>
+		<div class="tarrif-header">Тарифы</div>
+		<div class="flex-row">
+			<div class="tariff-div"><label>Свет<input id="Light" class="tariff-input"></label></div>
+			<div class="tariff-div"><label>Свет (Свыше 250 кВатт)<input id="LightLarge" class="tariff-input"></label></div>
+			<div class="tariff-div"><label>Газ<input id="Gas" class="tariff-input"></label></div>
+			<div class="tariff-div"><label>Вода<input id="Water" class="tariff-input"></label></div>
+		</div>
+		<div class="flex-row">
+			<div class="meter-params-head">Прошлые показания счетчика</div>
+			<div class="meter-params-head">Текущие показания счетчика</div>
+		</div>
+		<div class="flex-row">
+			<div class="meter-params">
+				Свет
+				<p><label><input id="PMV_Light"></label></p>
+				Газ
+				<p><label><input id="PMV_Gas"></label></p>
+				Вода
+				<p><label><input id="PMV_Water"></label></p>
+			</div>
+			<div class="meter-params">
+				Свет
+				<p><label><input id="CMV_Light"></label></p>
+				Газ
+				<p><label><input id="CMV_Gas"></label></p>
+				Вода
+				<p><label><input id="CMV_Water"></label></p>
+			</div>
+		</div>
+		<div>
+			<input id="Result" class="result-input">
+		</div>
+		<div>
+			<button onclick="CalculateResult();">Рассчитать</button>
+		</div>
+	</div>
+
+
+
+
+	<!-- <table>
 		<tr>
 			<td colspan="4">
 				<h2>Тарифы</h2>
 			</td>
 		</tr>
-		<tr>
+		<tr class="RowCutter">
 			<td>
 				<label>Свет<input id="Light" value="3"></label>
 			</td>
@@ -34,14 +76,25 @@
 		<tr>
 			<td colspan="2">
 				<h3>Прошлые значения счетчика</h3>
-				<div>
-					<p><label>Свет<input id="PMV_Light"> кВатт</label></p>
-					<p><label>Газ<input id="PMV_Gas"> м³</label></p>
-					<p><label>Вода<input id="PMV_Water"> м³</label></p>
-				</div>
 			</td>
 			<td colspan="2">
 				<h3>Текущие значения счетчика</h3>
+			</td>	
+		</tr>
+		<tr>
+			<td class="textCell">
+				<div>
+					<p>Свет</p>
+					<p>Газ</p>
+					<p>Вода</p>
+				</div>
+			</td>
+			<td class="inputCell">
+				<label><input id="PMV_Light"> кВатт</label>
+				<label><input id="PMV_Gas"> м³</label>
+				<label><input id="PMV_Water"> м³</label>
+			</td>
+			<td colspan="2">
 				<div>
 					<p><label>Свет<input id="CMV_Light"> кВатт</label></p>
 					<p><label>Газ<input id="CMV_Gas"> м³</label></p>
@@ -55,7 +108,7 @@
 				<p><button onclick="DoSomeFuckingMagic();">Рассчитать</button></p>
 			</td>
 		</tr>
-	</table>	
+	</table>	 -->
 </body>
 
 </html>
