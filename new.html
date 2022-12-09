@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Калькулятор коммунальных услуг</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<script src="new.js"></script>
+    <link rel="stylesheet" href="new.css">
+</head>
+
+<body>
+    <form class="utility_calc" id="form">
+        <h1 class="header">Калькулятор ЖКХ</h1>
+        <div class="input_area">
+            <div class="tariff_column">
+                <h2 class>Тарифы</h2>
+                <div>
+                    <input type="number" name="light_tariff" id="light_tariff" value="1.56" required />
+                    <br /><label for="light_tariff">Свет</label>
+                </div>
+                <div>
+                    <input type="number" name="light_over_tariff" id="light_over_tariff" value="2.12" required />
+                    <br /><label for="light_over_tariff">Свет (свыше 250)</label>
+                </div>
+                <div>
+                    <input type="number" name="gas_tariff" id="gas_tariff" value="3.22" required />
+                    <br /><label for="gas_tariff">Газ</label>
+                </div>
+                <div>
+                    <input type="number" name="water_tariff" id="water_tariff" value="40" required />
+                    <br /><label for="water_tariff">Вода</label>
+                </div>
+            </div>
+            <div class="params_area">
+                <h2 class="params_area_header">Значения счетчика</h2>
+                <div class="params_area_columns">
+                    <div class="params_column">
+                        <h3>Предыдущие</h3>
+                        <div>
+                            <input type="number" name="ligth_prev_meter" id="ligth_prev_meter" required />
+                            <br /><label for="ligth_prev_meter">Свет</label>
+                        </div>
+                        <div>
+                            <input type="number" name="gas_prev_meter" id="gas_prev_meter" required />
+                            <br /><label for="gas_prev_meter">Газ</label>
+                        </div>
+                        <div>
+                            <input type="number" name="water_prev_meter" id="water_prev_meter" required />
+                            <br /><label for="water_prev_meter">Вода</label>
+                        </div>
+                    </div>
+                    <div class="params_column">
+                        <h3>Текущие</h3>
+                        <div>
+                            <input type="number" name="ligth_curr_meter" id="ligth_curr_meter" required />
+                            <br /><label for="ligth_curr_meter">Свет</label>
+                        </div>
+                        <div>
+                            <input type="number" name="gas_curr_meter" id="gas_curr_meter" required />
+                            <br /><label for="gas_curr_meter">Газ</label>
+                        </div>
+                        <div>
+                            <input type="number" name="water_curr_meter" id="water_curr_meter" required />
+                            <br /><label for="water_curr_meter">Вода</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <textarea class="result_area"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="calc_button" onclick="calc_result()">Рассчитать стоимость</button>
+        </div>
+    </form>
+</body>
+
+</html>

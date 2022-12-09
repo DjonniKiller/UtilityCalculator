@@ -1,0 +1,137 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #44403c;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+input {
+    text-align: center;
+    width: 50%;
+    transition: 0.5s;
+}
+
+.utility_calc {
+    background-color: #f5f5f5;
+    box-shadow: 0 5px 20px #f5f5f5;
+    width: 80%;
+    height: 100vh;
+    margin: 0 10% 0 10%;
+    text-align: center;
+}
+
+.header {
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+
+.tariff_column {
+    flex-direction: column;
+    width: 40%;
+}
+
+.params_area {
+    width: 60%;
+}
+
+.params {
+    width: 100%
+}
+
+.params_area_header {
+    width: 100%;
+}
+
+.params_area_columns {
+    display: flex;
+}
+
+.params_column {
+    flex-direction: column;
+    width: 50%;
+}
+
+.params_column label {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 15px;
+    transition: 0.5s;
+}
+
+.params_column div {
+    position: relative;
+}
+
+.input_area {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.input_area label {
+    font-size: 25px;
+}
+
+.input_area input:focus ~ label,
+.input_area input:valid ~ label {
+    top: 0;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.input_area input:focus {
+    outline: none;
+    border-color: orange;
+}
+
+.input_area input {
+    margin: 25px 0 25px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+.tariff_column label {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 15px;
+    transition: 0.5s;
+}
+
+.tariff_column div {
+    position: relative;
+}
+
+.calc_button {
+    width: 25%;
+    height: 50px;
+    margin: 10px 0 10px 0;
+}
+
+.result_area {
+    width: 50%;
+    height: 50px;
+    margin: 50px 0 10px 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
