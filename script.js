@@ -10,7 +10,7 @@
 // необходимо от килловат вычесть 250, полученное значение умножить на тариф1. Далее  250 необходимо умножить на тариф2. Оба итоговых значения сложить.
 // Тарифы можешь ставить произвольные.
 function getDiff(Prev, Curr) {
-	if (isNaN(Prev) || isNaN(Curr))
+	if (isNaN(Prev) || isNaN(Curr) || Prev === '' || Curr === '')
 		throw 'Input includes incorrect symbols!'
 	else
 		return parseInt(Curr) - parseInt(Prev);
@@ -19,20 +19,46 @@ function getDiff(Prev, Curr) {
 
 function CalculateResult() {
 	try {
-		let lightDiff = getDiff(document.getElementById('PMV_Light').value, document.getElementById('CMV_Light').value);
-		let gasDiff = getDiff(document.getElementById('PMV_Gas').value, document.getElementById('CMV_Gas').value);
-		let waterDiff = getDiff(document.getElementById('PMV_Water').value, document.getElementById('CMV_Water').value);
+		// Показания счётчиков
+		const lightMetterPrev = parseFloat($('#PMV_Light').val());
+		const lightMetterCurr = parseFloat($('#CMV_Light').val());
+		const gazMetterPrev = parseFloat($('#PMV_Gas').val());
+		const gazMetterCurr = parseFloat($('#CMV_Gas').val());
+		const waterMewtterPrev = parseFloat($('#PMV_Water').val());
+		const waterMewtterCurr = parseFloat($('#CMV_Water').val());
+		
+		// Тарифы
+		const tarifLight = parseFloat($('#Light').val());
+		const tarifLightOver = parseFloat($('#LightLarge').val());
+		const tarifGaz = parseFloat($('#Gas').val());
+		const tarifWater = parseFloat($('#Water').val());
 
-		if (lightDiff > 250)
-			lightCost = (250 * document.getElementById('Light').value) + (lightDiff - 250) * document.getElementById('LightLarge').value;
-		else
-			lightCost = lightDiff * document.getElementById('Light').value;
+		// Поле результата
+		const resultField = $('#Result');
+		
+		// Разница показаний
+		let lightMetterDiff = getDiff(lightMetterPrev, lightMetterCurr);
+		let gasMetterDiff = getDiff(gazMetterPrev, gazMetterCurr);
+		let waterMetterDiff = getDiff(waterMewtterPrev, waterMewtterCurr);
+		
+		// Вычисления
+		if (lightMetterDiff > 250)
+			lightCost = (250 * tarifLight) + ((lightMetterDiff - 250) * tarifLightOver);
+		else lightCost = lightMetterDiff * tarifLight;
+		
+		const gazCost = gasMetterDiff * tarifGaz;
+		const waterCost = waterMetterDiff * tarifWater;
+		
 
+		// Вывод результата
+		let resultString = `Счет за свет: ${lightCost.toFixed(2)} руб.`;
+		resultString += `\nСчет за газ: ${gazCost.toFixed(2)} руб.`; 
+		resultString += `\nСчет за воду: ${waterCost.toFixed(2)} руб.`;
+		resultField.val(resultString);  
 
-		document.getElementById('Result').textContent = `Счет за свет: ${lightCost} руб.\nСчет за газ: ${gasDiff * document.getElementById('Gas').value} руб.\nСчет за воду: ${waterDiff * document.getElementById('Water').value} руб.`;
-
-	} catch (exception) {
-		alert(exception);
+	} catch (e) {
+		const error = new Error(e);
+		alert(error.message);
 	}
 }
 

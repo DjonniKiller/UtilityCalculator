@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+	
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Калькулятор коммунальных услуг</title>
 	<script src="script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,41 +15,54 @@
 	<div class="flex-container">
 		<div class="header">Калькулятор ЖКХ</div>
 		<div class="tarrif-header">Тарифы</div>
-		<div class="flex-row">
-			<div class="tariff-div"><label>Свет</label><input id="Light" class="tariff-input" value="1.56" /></div>
-			<div class="tariff-div"><label>Свет (Свыше 250 кВатт)</label><input id="LightLarge" class="tariff-input" value="2.12" /></div>
-			<div class="tariff-div"><label>Газ</label><input id="Gas" class="tariff-input" value="3.22" /></div>
-			<div class="tariff-div"><label>Вода</label><input id="Water" class="tariff-input" value="40" /></div>
-		</div>
-		<div class="flex-row">
-			<div class="meter-params-head">Прошлые показания счетчика</div>
-			<div class="meter-params-head">Текущие показания счетчика</div>
-		</div>
-		<div class="flex-row">
-			<div class="meter-params">
-				Свет
-				<p><input id="PMV_Light" /></p>
-				Газ
-				<p><input id="PMV_Gas" /></p>
-				Вода
-				<p><input id="PMV_Water" /></p>
+		<form>
+			<div class="flex-row">
+				<div class="tariff-div">
+					<label>Свет</label>
+					<input id="Light" class="tariff-input" value="1.56" />
+				</div>
+				<div class="tariff-div">
+					<label>Свет (Свыше 250 кВатт)</label>
+					<input id="LightLarge" class="tariff-input" value="2.12" />
+				</div>
+				<div class="tariff-div">
+					<label>Газ</label>
+					<input id="Gas" class="tariff-input" value="3.22" />
+				</div>
+				<div class="tariff-div">
+					<label>Вода</label>
+					<input id="Water" class="tariff-input" value="40" />
+				</div>
 			</div>
-			<div class="meter-params">
-				Свет
-				<p><input id="CMV_Light" /></p>
-				Газ
-				<p><input id="CMV_Gas" /></p>
-				Вода
-				<p><input id="CMV_Water" /></p>
+			<div class="flex-row">
+				<div class="meter-params-head">Прошлые показания счетчика</div>
+				<div class="meter-params-head">Текущие показания счетчика</div>
 			</div>
-		</div>
-		<div>
-			<textarea id="Result" class="result-input"></textarea>
-		</div>
-		<div>
-			<button onclick="CalculateResult();">Рассчитать</button>
-		</div>
+			<div class="flex-row">
+				<div class="meter-params">
+					Свет
+					<br/> <input id="PMV_Light" />
+					Газ
+					<p><input id="PMV_Gas" /></p>
+					Вода
+					<p><input id="PMV_Water" /></p>
+				</div>
+				<div class="meter-params">
+					Свет
+					<p><input id="CMV_Light" /></p>
+					Газ
+					<p><input id="CMV_Gas" /></p>
+					Вода
+					<p><input id="CMV_Water" /></p>
+				</div>
+			</div>
+			<div>
+				<textarea id="Result" class="result-input"></textarea>
+			</div>
+			<div>
+				<button type="submit" onclick="CalculateResult();">Рассчитать</button>
+			</div>
+		</form>
 	</div>
 </body>
-
 </html>

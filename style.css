@@ -52,21 +52,20 @@ input:focus{
 
 .header{
     font-size: large;
-    font-weight: bold;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    font-weight: 600;
+    margin: 25px 0;
 }
 
-.tarrif-header{
+.tarrif-header {
     font-size: medium;
     font-weight: bold;
 }
 
-.tariff-div{
+.tariff-div {
     width: 25%;
 }
 
-.flex-row{
+.flex-row {
     display: flex;
     margin: 15px 0 15px 0;
 }
