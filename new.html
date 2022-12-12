@@ -10,8 +10,6 @@
 		integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 	<script src="new.js"></script>
 	<link rel="stylesheet" href="new.css">
-	<script src="showDialog.js"></script>
-	<link rel="stylesheet" href="showDialog.css">
 </head>
 
 <body>
@@ -74,14 +72,18 @@
 			</div>
 		</div>
 		<div>
-			<button type="button" class="calc_button" id="calc_button" onclick="calc_result()">Рассчитать
-				стоимость</button>
+			<button type="submit" class="calc_button js-open-modal" data-modal="result">Показать
+				результат</button>
+			<div class="overlay js-modal-overlay" id="overlay-modal"></div>
+			<div class="modal js-modal" data-modal="result">
+				<svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+				</svg>
+				<textarea class="modal-result" id="result" readonly></textarea>
+			</div>
 		</div>
 	</form>
-	<div class="popup_window" id="popup">
-		<textarea id="result_area" class="result_area" id="result_output" readonly></textarea>
-		<button id="close_popup" class="popup_close" onclick="returnHome()">OK</button>
-	</div>
 </body>
 
 </html>

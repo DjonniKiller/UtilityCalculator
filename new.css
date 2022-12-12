@@ -1,10 +1,11 @@
 body{
     display: flex;
     flex-wrap: wrap;
-    background-color: #44403c;
+    background-color: #14181c;
     margin: 0;
     padding: 0;
     font-size: 20px;
+	 color: #ef6817;
 }
 
 input {
@@ -12,11 +13,11 @@ input {
     width: 50%;
     transition: 0.5s;
 	 font-size: 20px;
+	 color: #f5f5f5;
 }
 
 .utility_calc {
-    background-color: #f5f5f5;
-    box-shadow: 0 5px 20px #f5f5f5;
+    background-color: #14181c;
     width: 80%;
     height: 100vh;
     margin: 0 10% 0 10%;
@@ -90,15 +91,15 @@ input {
 }
 
 .input_area input:focus {
-    outline: none;
-    border-color: orange;
+   outline: none;
+	border-bottom: 1px solid orange;
 }
 
 .input_area input {
     margin: 25px 0 25px 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #ef6817;
 }
 
 .tariff_column label {
@@ -114,13 +115,6 @@ input {
     position: relative;
 }
 
-.calc_button {
-    width: 25%;
-    height: 50px;
-    margin: 10px 0 10px 0;
-	 font-size: 20px;
-}
-
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -133,33 +127,86 @@ input[type="number"]:focus {
     -moz-appearance: textfield;
 }
 
-.popup_window {
-	background-color: #f5f5f5;
-   box-shadow: 0 5px 20px #f5f5f5;
-	width: 100%;
-	margin-left: 10%;
-	margin-right: 10%;
+.modal {
+   display: none;
+   width: 50%;
+	height: 50vh;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 30;
+   box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2); 
+   text-align: center;
+   padding: 30px;
+   border-radius: 3px;
+   background-color: #14181c;
+	box-shadow: 0 0 30px #14181c;
+   transition: 0.3s all;
+}
+
+.overlay {
 	display: none;
-	text-align: center;
-	height: 100vh;
-	flex-wrap: wrap;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #f5f5f52d;
+   z-index: 20;
+   transition: .3s all;
 }
 
-.popup_close {
-	width: 10%;
-	margin: 0 45% 10% 45%;
-	height: 5vh;
-}
-
-.popup_window h1 {
-	width: 10%;
-	margin: 0px 0 0 0;
-}
-
-.result_area {
-	width: 80%;
-	height: 60vh;
-	margin: 10%;
+.modal textarea {
 	resize: none;
+	width: 80%;
+	height: 100%;
+	font-size: 24px;
+	color: #ef6817;
+	border: 1px solid #ef6817;
+	background: transparent;
+	padding: 10px;
+}
+
+.modal.is-show,
+.overlay.is-show {
+	display: block;
+}
+
+.modal__cross {
+   width: 15px;
+   height: 15px;
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   fill: #444;
+   cursor: pointer;
+}
+
+.calc_button {
+	background-color: transparent;
+	box-shadow: 0 5px 20px #ef6817;
+	color: #ef6817;
+	border: 1px solid #ef6817;
+	font-weight: 600;
+	width: 25%;
+	height: 50px;
+	margin: 10px 0 10px 0;
+	font-size: 30px;
+	transition: 1s;
+	font-family: UUS UN NASXI_1;
+}
+
+.calc_button:hover {
+	background-color: #ef6817;
+  	color: #fff;
+  	border: 1px solid #ef6817;
+  	box-shadow: 10px 10px 100px 6px #ef6817;
+	transition: 0.5s;
+}
+
+.calc_button:focus {
+	filter: brightness(80%);
+	transition: 1s;
 }
 
