@@ -3,31 +3,31 @@ $(function () {
 	$('#form').submit(function (event) {
 		event.preventDefault();
 
-		// Валидация
-		const inputs =
-			[
-				parseFloat($('#light_tariff').val()),
-				parseFloat($('#light_over_tariff').val()),
-				parseFloat($('#gas_tariff').val()),
-				parseFloat($('#water_tariff').val()),
-				parseFloat($('#ligth_prev_meter').val()),
-				parseFloat($('#gas_prev_meter').val()),
-				parseFloat($('#water_prev_meter').val()),
-				parseFloat($('#ligth_curr_meter').val()),
-				parseFloat($('#gas_curr_meter').val()),
-				parseFloat($('#water_curr_meter').val())
-			];
+		// // Валидация
+		// const inputs =
+		// 	[
+		// 		parseFloat($('#light_tariff').val()),
+		// 		parseFloat($('#light_over_tariff').val()),
+		// 		parseFloat($('#gas_tariff').val()),
+		// 		parseFloat($('#water_tariff').val()),
+		// 		parseFloat($('#ligth_prev_meter').val()),
+		// 		parseFloat($('#gas_prev_meter').val()),
+		// 		parseFloat($('#water_prev_meter').val()),
+		// 		parseFloat($('#ligth_curr_meter').val()),
+		// 		parseFloat($('#gas_curr_meter').val()),
+		// 		parseFloat($('#water_curr_meter').val())
+		// 	];
 
-		if (inputs.some((el) => el < 0))
-			alert('Inputs contain negative value!');
-		else {
+		// if (inputs.some((el) => el < 0))
+		// 	alert('Inputs contain negative value!');
+		// else {
 			// Расчет
 			calc_result();
 
 			// Показ модального окна
 			$('.js-modal').addClass('is-show');
 			$('.js-modal-overlay').addClass('is-show');
-		}
+		//}
 	});
 
 	// Обработчик нажатия на модальный крест
@@ -40,6 +40,20 @@ $(function () {
 	$('.js-modal-overlay').click(function () {
 		$('.js-modal').removeClass('is-show');
 		$('.js-modal-overlay').removeClass('is-show');
+	});
+
+	$('#form').validate({
+		rules: {
+			light_tariff: {
+				min: 6
+			},
+			ligth_prev_meter: {
+				required: true,
+			}
+		}, 
+		messages: {
+			light_tariff: 'Минимальная длина должна быть больше 6!'
+		}
 	});
 });
 
@@ -84,6 +98,7 @@ function calc_result() {
 
 	const gasCost = gasParamsDiff * tariffs.gasTariff;
 	const waterCost = waterParamsDiff * tariffs.waterTariff;
+
 
 	// Формирование результирующей строки
 	let resultString = `Расчет стоимости света: `;
